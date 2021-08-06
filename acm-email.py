@@ -43,8 +43,8 @@ def lambda_handler(event, context):
     # Send email         
     msg = MIMEMultipart()
     msg["Subject"] = "Weekly ACM Report"
-    msg["From"] = "ajithkumarapt@gmail.com"
-    msg["To"] = "ajithkumarapt@gmail.com"
+    msg["From"] = "Cynthia.uwhe@placeformom.com"
+    msg["To"] = "Cynthia.uwhe@placeformom.com"
     # Set message body
     body = MIMEText("Hello, This is weekly ACM cert report !", "plain")
     msg.attach(body)
@@ -60,8 +60,8 @@ def lambda_handler(event, context):
     # Convert message to string and send
     ses_client = boto3.client("ses", region_name="us-west-2")
     response = ses_client.send_raw_email(
-        Source="ajithkumarapt@gmail.com",
-        Destinations=["ajithkumarapt@gmail.com"],
+        Source="Cynthia.uwhe@placeformom.com",
+        Destinations=["Cynthia.uwhe@placeformom.com"],
         RawMessage={"Data": msg.as_string()}
     )
     print(response)
