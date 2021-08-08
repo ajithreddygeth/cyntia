@@ -37,12 +37,12 @@ def lambda_handler(event, context):
     print(glob.glob("/tmp/"))
     
     msg = MIMEMultipart()
-    msg["Subject"] = "Daily logs"
+    msg["Subject"] = "Weekley EC2 certs update"
     msg["From"] = "ajithkumarapt@gmail.com"
     msg["To"] = "ajithkumarapt@gmail.com"
 
     # Set message body
-    body = MIMEText("Hello, This is daily log email !", "plain")
+    body = MIMEText("Hello, This is weekly updat on EC2 certificate expiery  !", "plain")
     msg.attach(body)
     filename = "/tmp/report/expirey.csv"  # In same directory as script
 
