@@ -87,3 +87,5 @@ rm -r ${VIRTUAL_ENV_DIR}
 rm -r ${LAMBDA_LAYER_DIR}
 
 ```
+
+Go to Lambda--> Layers --> Add layer --> Upload the awscli-lambda-layer.zip to the layer and use it on the lambda
