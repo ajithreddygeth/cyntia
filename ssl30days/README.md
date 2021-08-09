@@ -1,3 +1,11 @@
+Requirements:
+
+1. S3 bucket 
+2. AWS cli installed (access to S3 from EC2 node)
+3. Lambda (permission: S3,SES)
+
+
+
 GET ALL CERTIFICATE EXPIREY DATES AND SEND AS CSV TO EMAIL
 
 STEP:1 **NOTE: THIS SHOULD BE USED IN ANY ONE OF THE NODE ONLY**
