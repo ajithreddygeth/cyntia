@@ -16,7 +16,7 @@ Copy the init.sh
 
 ```
 $ chmod +x init.sh
-$ 0 0 * * MON /home/{user}/init.sh
+$ 0 0 * * MON /home/centos/ssl-report/init.sh
 ```
 
 
@@ -28,7 +28,7 @@ Copy the shell script and schedule it for every monday. (on all nodes)
 ```
 $ chmod +x exportcsv.sh
 $ crontab -e
-$ 2 0 * * MON /home/{user}/exportcsv.sh
+$ 2 0 * * MON /home/centos/ssl-report/report.sh
 
 ```
 
