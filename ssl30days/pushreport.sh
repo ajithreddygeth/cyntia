@@ -1,5 +1,9 @@
 #bin/bash
 #cron to run on every week monday.. make sure to change the permission of the file to (chmod +x filename.sh)
+# $ export AWS_ACCESS_KEY_ID=AKIAI******
+# $ export AWS_SECRET_ACCESS_KEY=wJalrXUt**************
+# $ export AWS_DEFAULT_REGION=us-west-2
+
 export path=/home/ec2-user/server.crt
 let DIFF=($(date +%s -d `date --date="$(openssl x509 -in $path -noout -enddate | cut -d= -f 2)" --iso-8601`)-$(date +%s -d $'(date +%m-%d-%Y)'))/86400
 if [ $DIFF -lt 30 ];
