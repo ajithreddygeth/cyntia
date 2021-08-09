@@ -33,7 +33,7 @@ def lambda_handler(event, context):
     date=now.strftime("%d")
     month=now.strftime("%m")
     year=now.strftime("%Y")
-    run_command('/opt/aws s3 cp s3://ssl-report-test/{}/{}/{}/expirey.csv /tmp/report/'.format(year,month,date))
+    run_command('/opt/aws s3 cp s3://ssl-cert-reports/{}/{}/{}/expirey.csv /tmp/report/'.format(year,month,date))
     print(glob.glob("/tmp/"))
     
     msg = MIMEMultipart()
