@@ -14,7 +14,7 @@ do
   elif [ $DIFF -gt 30 ]
   then
     echo "cert is not expering"
-  elif [[ $(openssl x509 -text -noout -in $i | grep DNS || echo $?) = 1 ]
+  elif [[ $(openssl x509 -text -noout -in $i | grep DNS || echo $?) = 1 ]]
   then
     echo "System managed cert"
   else
