@@ -1,6 +1,6 @@
 #bin/bash
-export AWS_ACCESS_KEY_ID=AKIAVH3P*********
-export AWS_SECRET_ACCESS_KEY=25GkPAP8RY***************
+export AWS_ACCESS_KEY_ID=AKIAVH3**********
+export AWS_SECRET_ACCESS_KEY=25GkPA*******************
 export AWS_DEFAULT_REGION=us-west-2
 
 rm list.txt
