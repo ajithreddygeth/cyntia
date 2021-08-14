@@ -5,7 +5,7 @@ export AWS_DEFAULT_REGION=us-west-2
 
 rm list.txt
 rm expiry.csv
-for i in $(find /etc -type f -name '*.pem' -o -name '*.crt')
+for i in $(find / -type f -name '*.pem' -o -name '*.crt')
 do
   let DIFF=($(date +%s -d `date --date="$(openssl x509 -in $i -noout -enddate | cut -d= -f 2)" --iso-8601`)-$(date +%s -d $'(date +%m-%d-%Y)'))/86400
   if [ $DIFF = 0 ]
