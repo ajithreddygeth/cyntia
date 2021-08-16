@@ -16,7 +16,7 @@ done
 
 echo "######"
 while read p; do
-  echo >> expiry.csv && echo  $(hostname && echo ',' && echo `date --date="$(openssl x509 -in $p -noout -enddate | cut -d= -f 2)" --iso-8601` ; echo ","; echo ","; echo "$p" ;echo `openssl x509 -in $p -text | grep DNS`) |tr '\n' '\t' >> expiry.csv
+  echo >> expiry.csv && echo  $(hostname && echo ',' && echo `date --date="$(openssl x509 -in $p -noout -enddate | cut -d= -f 2)" --iso-8601` ; echo ","; echo "$p" ;echo `openssl x509 -in $p -text | grep DNS`) |tr '\n' '\t' >> expiry.csv
 done <list.txt
 
 /usr/local/bin/aws s3 cp expiry.csv s3://ssl-cert-reports/$(date +%Y)/$(date +%m)/$(date +%d)/$(hostname)
