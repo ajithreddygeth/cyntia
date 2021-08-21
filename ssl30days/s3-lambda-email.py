@@ -1,6 +1,7 @@
 import subprocess
 import logging
 import glob
+import os
 import boto3
 from datetime import datetime
 from email.mime.multipart import MIMEMultipart
@@ -33,8 +34,8 @@ def lambda_handler(event, context):
     date=now.strftime("%d")
     month=now.strftime("%m")
     year=now.strftime("%Y")
-    run_command('/opt/aws s3 cp s3://ssl-cert-reports/{}/{}/{}/expirey.csv /tmp/report/'.format(year,month,date))
-    print(glob.glob("/tmp/"))
+    run_command('/opt/aws s3 cp s3://ssl-report-test/{}/{}/{}/ /tmp/report/ --recursive'.format(year,month,date))
+    os.system ('sed 1d /tmp/report/* > /tmp/report/report.csv')
     
     msg = MIMEMultipart()
     msg["Subject"] = "Weekley EC2 certs update"
@@ -44,7 +45,7 @@ def lambda_handler(event, context):
     # Set message body
     body = MIMEText("Hello, This is weekly updat on EC2 certificate expiery  !", "plain")
     msg.attach(body)
-    filename = "/tmp/report/expirey.csv"  # In same directory as script
+    filename = "/tmp/report/report.csv"  # In same directory as script
 
     with open(filename, "rb") as attachment:
         part = MIMEApplication(attachment.read())
